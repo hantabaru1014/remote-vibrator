@@ -4,15 +4,101 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity" >
 
     <TextView
+        android:id="@+id/textAddressLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="18dp"
+        android:text="@string/edit_address_label"
+        android:labelFor="@id/editAddress"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <EditText
+        android:id="@+id/editAddress"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="18dp"
+        android:ems="10"
+        android:importantForAutofill="no"
+        android:inputType="textUri"
+        android:minHeight="48dp"
+        android:text="@string/edit_address_placeholder"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/textAddressLabel"
+        app:layout_constraintTop_toBottomOf="@+id/textAddressLabel" />
+
+    <Button
+        android:id="@+id/buttonConnect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="61dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/btn_connect"
+        android:onClick="handleClickConnect"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editDeviceName" />
+
+    <Button
+        android:id="@+id/buttonDisconnect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="61dp"
+        android:text="@string/btn_disconnect"
+        android:onClick="handleClickDisconnect"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editDeviceName" />
+
+    <EditText
+        android:id="@+id/editDeviceName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:ems="10"
+        android:importantForAutofill="no"
+        android:inputType="text"
+        android:minHeight="48dp"
+        android:text="@string/edit_devicename_placeholder"
+        app:layout_constraintEnd_toEndOf="@+id/editAddress"
+        app:layout_constraintStart_toStartOf="@+id/editAddress"
+        app:layout_constraintTop_toBottomOf="@+id/textDeviceNameLabel" />
+
+    <TextView
+        android:id="@+id/textDeviceNameLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/edit_devicename_label"
+        android:labelFor="@id/editDeviceName"
+        app:layout_constraintStart_toStartOf="@+id/editDeviceName"
+        app:layout_constraintTop_toBottomOf="@+id/editAddress" />
+
+    <ScrollView
+        android:layout_width="379dp"
+        android:layout_height="458dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="18dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonConnect">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/textLog"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

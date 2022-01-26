@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">RemoteVibrator</string>
+    <string name="edit_address_label">Address</string>
+    <string name="edit_address_placeholder">ws://192.168.x.x:6614/</string>
+    <string name="btn_connect">Connect</string>
+    <string name="btn_disconnect">Disconnect</string>
+    <string name="edit_devicename_label">Device Name</string>
+    <string name="edit_devicename_placeholder">01</string>
 </resources>
